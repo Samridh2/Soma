@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="gradient-bg-div">
+        <nav class="main-nav">
+            <div class="logo-container">
+                <div class="logo-icon-wrapper">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <a href="index.html" class="">Soma</a>
+            </div>
+            <div class="nav-bar-container">
+                <nav class="nav-bar">
+                    <a href="index.html" class="active"> Home</a>
+                    <a href="About Us.html"> About Us</a>
+                </nav>
+            </div>
+        </nav>
+        
+        <header class="main-header">
+            <div class="header-content">
+                <h1>Your Environmental Health <span id="dynamicHeaderText">Companion</span><span class="header-caret"></span></h1>
+                <p>Track how climate and pollution might affect your body and mind, with recommendations to optimize your wellbeing.</p>
+                <button id="getStartedBtn" class="get-started-button">Get Started</button>
+            </div>
+        </header>
+    </div>
+    
+    <main class="main-content">
+        <section class="dashboard-overview-section">
+            <div class="health-card">
+                <div class="card-header">
+                    <h3>Current Air Quality</h3>
+                    <div class="icon-wrapper green-bg">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                </div>
+                <div class="card-value">
+                    <!-- Added id="currentAqiDisplay" to show real-time AQI number -->
+                    <p id="currentAqiDisplay">--</p>
+                    <!-- Added id="aqiStatusText" to show AQI status (Good, Moderate, etc.) -->
+                    <p id="aqiStatusText" class="good-text">Loading...</p>
+                </div>
+                <div class="card-detail">
+                    <!-- Added ids for PM2.5 and O3 display -->
+                    <p><span id="pm25Display">-- µg/m³</span> • <span id="o3Display">-- ppb</span></p>
+                </div>
+            </div>
+            
+            <div class="health-card">
+                <div class="card-header">
+                    <h3>Weather Conditions</h3>
+                    <div class="icon-wrapper blue-bg">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                </div>
+                <div class="card-value">
+                    <p id="currentTemp">--°C</p>
+                    <p class="blue-text">Loading...</p>
+                </div>
+                <div class="card-detail">
+                    <!-- Added ids for Humidity and Wind display -->
+                    <p>Humidity: <span id="humidityDisplay">--%</span> • Wind: <span id="windDisplay">-- km/h</span></p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="trackHealthSection" class="health-tracking-section">
+            <div class="section-header">
+                <h2>Track Your Health</h2>
+            </div>
+            
+            <div class="tracking-grid">
+                <div class="health-card">
+                    <div class="card-header-tracking">
+                        <h3>Mood Log</h3>
+                        <button class="plus-button">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <!-- Existing mood log entries will be cleared and re-rendered by JS -->
+                    <div class="mood-log-entries" id="moodLogEntries">
+                        <!-- Mood entries will be dynamically added here by JavaScript -->
+                    </div>
+                    <button id="logMoodBtn" class="log-mood-button">Log Your Mood</button>
+                </div>
+                
+                <div class="health-card">
+                    <div class="card-header-tracking">
+                        <h3>Breathing Exercise</h3>
+                        <div class="flex items-center gap-2">
+                            <label for="exerciseDuration" class="text-sm text-gray-600 font-medium">Duration:</label>
+                            <select id="exerciseDuration" class="duration-select">
+                                <option value="1">1 min</option>
+                                <option value="3" selected>3 min</option>
+                                <option value="5">5 min</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="breathing-animation-container">
+                        <div id="breathingAnimationCircle" class="breathing-circle">
+                            <span id="inhaleExhaleText" class="breathing-text">Ready?</span>
+                        </div>
+                    </div>
+                    <div class="breathing-info">
+                        <p>Remaining time: <span id="remainingTime">03:00</span></p>
+                        <p class="green-text-medium">Focus on your breath.</p>
+                    </div>
+                    <button id="startBreathingBtn" class="begin-breathing-button">Begin Breathing Exercise</button>
+                </div>
+                
+                <div class="health-card">
+                    <div class="card-header-tracking">
+                        <h3>Hydration</h3>
+                        <button class="tint-button">
+                            <i class="fas fa-tint"></i>
+                        </button>
+                    </div>
+                    <div class="hydration-container">
+                        <div class="water-background">
+                            <div id="waterLevel" class="water-level"></div>
+                        </div>
+                        <div class="water-amount-display">
+                            <span id="waterAmount">0</span>
+                            <span>glasses</span>
+                        </div>
+                    </div>
+                    <div class="hydration-actions">
+                        <button id="addWaterBtn" class="add-water-button">Add Glass</button>
+                        <button id="resetWaterBtn" class="reset-water-button">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="environmental-data-section">
+            <h2>Environmental Data</h2>
+            <div class="environmental-data-grid">
+                <div class="health-card">
+                    <div class="card-header-environmental">
+                        <h3>Air Quality Index</h3>
+                        <select id="aqiLocation" class="location-select">
+                            <option value="Bangalore" selected>Bangalore (Current Location)</option>
+                        </select>
+                    </div>
+                    <div id="aqiChart" class="chart-placeholder"></div>
+                    <div class="chart-labels">
+                        <span>Midnight</span>
+                        <span>6 AM</span>
+                        <span>Noon</span>
+                        <span>6 PM</span>
+                        <span>Midnight</span>
+                    </div>
+                </div>
+                
+                <div class="health-card">
+                    <div class="card-header-environmental">
+                        <h3>Temperature Trend</h3>
+                        <select id="tempDays" class="days-select">
+                            <option>Today</option>
+                            <option>Weekly</option>
+                            <option>Monthly</option>
+                        </select>
+                    </div>
+                    <div id="tempChart" class="chart-placeholder"></div>
+                    <div class="chart-labels">
+                        <span>00:00</span>
+                        <span>06:00</span>
+                        <span>12:00</span>
+                        <span>18:00</span>
+                        <span>24:00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="recommendations-section">
+            <h2>Recommendations</h2>
+            <div class="health-card">
+                <div class="recommendation-header">
+                    <div class="icon-wrapper pink-bg">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <h3>Based on current environment data</h3>
+                        <ul id="recommendationsList" class="recommendations-list">
+                            <li>
+                                <i class="fas fa-check-circle checkmark-icon"></i>
+                                <p>Take a 5-minute walk outside while air quality is at its best (8-9 AM)</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle checkmark-icon"></i>
+                                <p>Consider using an air purifier as indoor PM2.5 levels are elevated</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle checkmark-icon"></i>
+                                <p>Increase hydration to 10 glasses today due to higher temperature and humidity</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="refresh-button-container">
+                    <button id="refreshRecsBtn" class="refresh-recommendations-button">
+                        <i class="fas fa-sync-alt"></i>Refresh Recommendations
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <div class="footer-logo-icon-wrapper">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h2>Soma</h2>
+            </div>
+            <div class="footer-links">
+                <a href="Privacy.html">Privacy</a>
+                <a href="Terms.html">Terms</a>
+            </div>
+        </div>
+        <div class="copyright-info">
+            <p>© 2025 Soma. All rights reserved. Health insights are not medical advice.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Mood Logging Modal -->
+    <div id="moodModal" class="mood-modal-overlay hidden">
+        <div class="mood-modal-content">
+            <h3>Log Your Current Mood</h3>
+            <div class="mood-options">
+                <button class="mood-option" data-mood="Happy">
+                    <i class="fas fa-smile text-green-500"></i> Happy
+                </button>
+                <button class="mood-option" data-mood="Neutral">
+                    <i class="fas fa-meh text-blue-500"></i> Neutral
+                </button>
+                <button class="mood-option" data-mood="Sad">
+                    <i class="fas fa-frown text-red-500"></i> Sad
+                </button>
+                <button class="mood-option" data-mood="Anxious">
+                    <i class="fas fa-tired text-orange-500"></i> Anxious
+                </button>
+                <button class="mood-option" data-mood="Energetic">
+                    <i class="fas fa-bolt text-yellow-500"></i> Energetic
+                </button>
+            </div>
+            <div class="modal-actions">
+                <button id="logMoodSubmitBtn" class="log-mood-button">Log Mood</button>
+                <button id="cancelMoodBtn" class="reset-water-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

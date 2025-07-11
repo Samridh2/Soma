@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma - Privacy Policy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- styles.css content starts here --- */
+        :root {
+            --primary: #4f46e5;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --indigo-600: #4f46e5;
+            --indigo-50: #eef2ff;
+            --indigo-100: #e0e7ff;
+            --indigo-200: #c7d2fe;
+            --indigo-500: #6366f1;
+            --indigo-800: #3730a3;
+            --green-500: #22c55e;
+            --green-600: #16a34a;
+            --green-100: #dcfce7;
+            --blue-100: #dbeafe;
+            --blue-200: #bfdbfe;
+            --blue-500: #3b82f6;
+            --blue-600: #2563eb;
+            --blue-50: #eff6ff;
+            --purple-100: #ede9fe;
+            --purple-600: #9333ea;
+            --yellow-100: #fef9c3;
+            --yellow-600: #eab308;
+            --yellow-200: #fef08a;
+            --gray-500: #6b7280;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --gray-600: #4b5563;
+            --pink-100: #fce7f3;
+            --pink-600: #db2777;
+            --red-500: #ef4444;
+            --orange-500: #f97316;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: var(--dark);
+            min-height: 100vh;
+            margin: 0; /* Ensure no default body margin */
+            padding: 0; /* Ensure no default body padding */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Global Box-Sizing */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        .health-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: flex; /* Added for consistent card layout */
+            flex-direction: column; /* Stack content vertically */
+            width: 100%; /* Ensure cards take full width on small screens */
+        }
+
+        .health-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .gradient-bg-div {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c7d2fe;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #a5b4fc;
+        }
+
+        /* AQI Chart Styles */
+        #aqiChart {
+            position: relative;
+            width: 100%;
+            height: 12rem; /* Fixed height for consistency */
+        }
+
+        #aqiChart::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--gray-200);
+        }
+
+        /* Temperature Chart Styles */
+        #tempChart {
+            position: relative;
+            width: 100%;
+            height: 12rem; /* Fixed height for consistency */
+        }
+
+        #tempChart::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--gray-200);
+        }
+
+        /* General Layout */
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1280px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 768px) { /* md: */
+            .container {
+                padding-left: 1.5rem; /* md:px-6 */
+                padding-right: 1.5rem; /* md:px-6 */
+            }
+        }
+
+        @media (min-width: 1024px) { /* lg: */
+            .container {
+                padding-left: 2rem; /* lg:px-8 */
+                padding-right: 2rem; /* lg:px-8 */
+            }
+        }
+
+        /* Header & Nav */
+        .main-nav {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon-wrapper {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon-wrapper i {
+            color: var(--green-500);
+            font-size: 1.25rem;
+        }
+
+        .logo-container a{
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-left: 1.rem;
+            text-decoration: none;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .logo-container:hover {
+            color: #BFFF00;
+            transition: 0.3s ease;
+            cursor: default;
+        }
+
+        .nav-bar a{
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: white;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active{
+            color: #BFFF00;
+            border-bottom: 3px solid #BFFF00;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .main-header {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .header-content {
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem; /* Adjusted for smaller screens */
+            font-weight: 700;
+            margin-bottom: 1rem; /* Adjusted for smaller screens */
+            display: flex; /* Enable flexbox for h1 content */
+            justify-content: center; /* Center horizontally */
+            align-items: baseline; /* Align text and caret */
+            flex-wrap: wrap; /* Allow text to wrap if needed */
+        }
+
+        /* Style for the dynamic text span */
+        #dynamicHeaderText {
+            display: inline-block; /* Ensures proper spacing with caret */
+            white-space: nowrap; /* Prevent text from wrapping within the span */
+        }
+
+        /* Style for the blinking caret - JS will control background-color */
+        .header-caret {
+            display: inline-block;
+            width: 0.1em; /* Thin vertical bar */
+            height: 1em; /* Height of the text */
+            background-color: transparent; /* Start transparent, JS will toggle to white */
+            margin-left: 0.1em; /* Small space between text and caret */
+            vertical-align: baseline; /* Align with the text */
+            transition: background-color 0.2s ease-in-out; /* Smooth transition for blinking */
+        }
+
+        @media (min-width: 640px) { /* sm: */
+            .header-content h1 {
+                font-size: 3rem; /* text-5xl */
+            }
+        }
+
+        .header-content p {
+            font-size: 1rem; /* Adjusted for smaller screens */
+            margin-bottom: 1.5rem; /* Adjusted for smaller screens */
+            opacity: 0.9;
+        }
+
+        @media (min-width: 640px) { /* sm: */
+            .header-content p {
+                font-size: 1.25rem; /* text-xl */
+                margin-bottom: 2rem; /* mb-8 */
+            }
+        }
+
+        .get-started-button {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            background-color: white;
+            color: var(--indigo-600);
+            border-radius: 9999px;
+            font-weight: 700;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.875rem; /* Adjusted for smaller screens */
+        }
+
+        @media (min-width: 640px) { /* sm: */
+            .get-started-button {
+                font-size: 1rem; /* Reset to default for larger screens */
+            }
+        }
+
+        .get-started-button:hover {
+            background-color: var(--indigo-50);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 3rem;
+            margin-top: -3rem;
+        }
+
+        /* Dashboard Overview */
+        .dashboard-overview-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) { /* md: */
+            .dashboard-overview-section {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-header h3 {
+            font-weight: 600;
+            color: var(--gray-500);
+            font-size: 1rem; /* Adjusted for smaller screens */
+        }
+
+        @media (min-width: 640px) { /* sm: */
+            .card-header h3 {
+                font-size: 1.125rem; /* text-lg */
+            }
+        }
+
+        .icon-wrapper {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .green-bg { background-color: var(--green-100); }
+        .green-bg i { color: var(--green-600); }
+        .blue-bg { background-color: var(--blue-100); }
+        .blue-bg i { color: var(--blue-600); }
+        .purple-bg { background-color: var(--purple-100); }
+        .purple-bg i { color: var(--purple-600); }
+
+        .card-value {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+
+        .card-value p:first-child {
+            font-size: 1.875rem; /* Adjusted for smaller screens */
+            font-weight: 700;
+        }
+
+        @media (min-width: 640px) { /* sm: */
+            .card-value p:first-child {
+                font-size: 2.25rem; /* text-4xl */
+            }
+        }
+
+        .card-value p:last-child {
+            font-weight: 500;
+            font-size: 0.875rem; /* Adjusted for smaller screens */
+        }
+
+        @media (min-width: 640px) { /* sm: */
+            .card-value p:last-child {
+                font-size: 1rem; /* Reset to default for larger screens */
+            }
+        }
+
+        .good-text { color: var(--green-600); }
+        .blue-text { color: var(--blue-600); }
+        .purple-text { color: var(--purple-600); }
+
+        .card-detail {
+            margin-top: 1rem;
+        }
+
+        .card-detail p {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        /* Health Insights */
+        .health-insights-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.25rem; /* Adjusted for smaller screens */
+            font-weight: 700;
+        }
+
+        @media (min-width: 640px) { /* sm: */
+            .section-header h2 {
+                font-size: 1.5rem; /* text-2xl */
+            }
+        }
+
+        .view-all-button {
+            color: var(--indigo-600);
+            font-weight: 500;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            font-size: 0.875rem; /* Adjusted for smaller screens */
+        }
+
+        @media (min-width: 640px) { /* sm: */
+            .view-all-button {
+                font-size: 1rem; /* Reset to default for larger screens */
+            }
+        }
+
+        .view-all-button:hover {
+            color: var(--indigo-800);
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) { /* md: */
+            .insights-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .insight-item-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .insight-item-header .icon-wrapper {
+            width: 3rem;
+            height: 3rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .icon-wrapper.green-bg-who { background-color: var(--green-100); }
+        .icon-wrapper.green-bg-who i { color: var(--green-600); font-size: 1.25rem; }
+        .icon-wrapper.blue-bg-who { background-color: var(--blue-100); }
+        .icon-wrapper.blue-bg-who i { color: var(--blue-600); font-size: 1.25rem; }
+        .icon-wrapper.purple-bg-who { background-color: var(--purple-100); }
+        .icon-wrapper.purple-bg-who i { color: var(--purple-600); font-size: 1.25rem; }
+        .yellow-bg { background-color: var(--yellow-100); }
+        .yellow-bg i { color: var(--yellow-600); font-size: 1.25rem; }
+        .indigo-bg { background-color: var(--indigo-100); }
+        .indigo-bg i { color: var(--indigo-600); font-size: 1.25rem; }
+
+        .insight-item-header h3 {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .insight-item-header h3 {
+                font-size: 1.125rem;
+            }
+        }
+
+        .insight-item-header p {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        @media (min-width: 640px) {
+            .insight-item-header p {
+                font-size: 0.875rem;
+            }
+        }
+
+        .insight-description {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            color: var(--gray-600);
+        }
+
+        @media (min-width: 640px) {
+            .insight-description {
+                font-size: 0.95rem;
+            }
+        }
+
+        .insight-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .view-details-button {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: var(--indigo-100);
+            color: var(--indigo-600);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .view-details-button:hover {
+            background-color: var(--indigo-200);
+        }
+
+        .updated-time {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        .set-reminder-button {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: var(--indigo-100);
+            color: var(--indigo-600);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .set-reminder-button:hover {
+            background-color: var(--indigo-200);
+        }
+
+        .recommended-text {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        /* Health Tracking */
+        .health-tracking-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.25rem; /* Adjusted for smaller screens */
+            font-weight: 700;
+        }
+
+        @media (min-width: 640px) { /* sm: */
+            .section-header h2 {
+                font-size: 1.5rem; /* text-2xl */
+            }
+        }
+
+        .history-button {
+            color: var(--indigo-600);
+            font-weight: 500;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .history-button:hover {
+            color: var(--indigo-800);
+        }
+
+        .tracking-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .tracking-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .card-header-tracking {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header-tracking h3 {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .card-header-tracking h3 {
+                font-size: 1.125rem;
+            }
+        }
+
+        .plus-button, .chart-line-button, .tint-button {
+            padding: 0.5rem;
+            border-radius: 9999px;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray-600);
+        }
+
+        .plus-button:hover, .chart-line-button:hover, .tint-button:hover {
+            background-color: var(--gray-100);
+        }
+
+        .mood-log-entries {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mood-entry {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .icon-wrapper.green-bg-small { background-color: var(--green-100); }
+        .icon-wrapper.green-bg-small i { color: var(--green-600); }
+        .icon-wrapper.blue-bg-small { background-color: var(--blue-100); }
+        .icon-wrapper.blue-bg-small i { color: var(--blue-600); }
+        .red-bg-small { background-color: #fee2e2; }
+        .red-bg-small i { color: var(--red-500); }
+        .orange-bg-small { background-color: #ffedd5; }
+        .orange-bg-small i { color: var(--orange-500); }
+        .yellow-bg-small { background-color: var(--yellow-100); }
+        .yellow-bg-small i { color: var(--yellow-600); }
+        .gray-bg-small { background-color: var(--gray-100); }
+        .gray-bg-small i { color: var(--gray-500); }
+
+        .mood-details {
+            flex: 1;
+        }
+
+        .mood-label-time {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mood-label-time p:first-child {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 640px) {
+            .mood-label-time p:first-child {
+                font-size: 1rem;
+            }
+        }
+
+        .mood-label-time p:last-child {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        .progress-bar-background {
+            height: 0.25rem;
+            width: 100%;
+            background-color: var(--gray-200);
+            border-radius: 9999px;
+            margin-top: 0.25rem;
+        }
+
+        .progress-bar-fill {
+            height: 0.25rem;
+            border-radius: 9999px;
+            transition: width 0.5s ease-out;
+        }
+
+        .green-fill { background-color: var(--green-500); }
+        .blue-fill { background-color: var(--blue-500); }
+        .red-fill { background-color: var(--red-500); }
+        .orange-fill { background-color: var(--orange-500); }
+        .yellow-fill { background-color: var(--yellow-600); }
+        .gray-fill { background-color: var(--gray-500); }
+
+        .log-mood-button {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: var(--gray-100);
+            border-radius: 0.5rem;
+            color: var(--gray-600);
+            font-weight: 500;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 640px) {
+            .log-mood-button {
+                font-size: 1rem;
+            }
+        }
+
+        .log-mood-button:hover {
+            background-color: var(--gray-200);
+        }
+
+        /* Breathing Exercise Styles */
+        .duration-select {
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+            background-color: var(--gray-100);
+            border-radius: 0.5rem;
+            border: 1px solid var(--gray-200);
+            cursor: pointer;
+        }
+
+        .breathing-animation-container {
+            height: 10rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .breathing-circle {
+            width: 8rem;
+            height: 8rem;
+            background-color: var(--indigo-200);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--indigo-800);
+            transition: transform 4s ease-in-out, background-color 4s ease-in-out;
+            box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+            animation: pulse-shadow 4s infinite alternate;
+        }
+
+        .breathing-circle.inhale {
+            transform: scale(1.2);
+            background-color: var(--indigo-500);
+        }
+
+        .breathing-circle.exhale {
+            transform: scale(0.8);
+            background-color: var(--indigo-200);
+        }
+
+        .breathing-text {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        @keyframes pulse-shadow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(99, 102, 241, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+            }
+        }
+
+        .breathing-info {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .breathing-info p {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        .green-text-medium {
+            color: var(--green-600);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .begin-breathing-button {
+            width: 100%;
+            margin-top: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: var(--indigo-100);
+            color: var(--indigo-600);
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 640px) {
+            .begin-breathing-button {
+                font-size: 1rem;
+            }
+        }
+
+        .begin-breathing-button:hover {
+            background-color: var(--indigo-200);
+        }
+
+        .hydration-container {
+            position: relative;
+            height: 10rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .water-background {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8rem;
+            background-color: var(--blue-50);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .water-level {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background-color: var(--blue-200);
+            transition-property: all;
+            transition-duration: 500ms;
+        }
+
+        .water-amount-display {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .water-amount-display span:first-child {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--blue-600);
+        }
+
+        .water-amount-display span:last-child {
+            color: var(--blue-600);
+            margin-left: 0.25rem;
+        }
+
+        .hydration-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .add-water-button {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: var(--blue-100);
+            color: var(--blue-600);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            border: none;
+            cursor: pointer;
+        }
+
+        .add-water-button:hover {
+            background-color: var(--blue-200);
+        }
+
+        .reset-water-button {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: var(--gray-100);
+            color: var(--gray-600);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            border: none;
+            cursor: pointer;
+        }
+
+        .reset-water-button:hover {
+            background-color: var(--gray-200);
+        }
+
+        /* Environmental Data */
+        .environmental-data-section {
+            margin-bottom: 3rem;
+        }
+
+        .environmental-data-section h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .environmental-data-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .environmental-data-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .environmental-data-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .card-header-environmental {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .card-header-environmental h3 {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .card-header-environmental h3 {
+                font-size: 1.125rem;
+            }
+        }
+
+        .location-select, .days-select {
+            font-size: 0.875rem;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            padding-top: 0.25rem;
+            background-color: var(--gray-100);
+            border-radius: 0.5rem;
+            border: 1px solid var(--gray-200);
+            cursor: pointer;
+        }
+
+        .chart-placeholder {
+            height: 12rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        /* Recommendations */
+        .recommendations-section {
+            margin-bottom: 3rem; /* Added margin-bottom for consistency */
+        }
+
+        .recommendations-section h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .recommendations-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .recommendation-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .recommendation-header .icon-wrapper {
+            width: 3rem;
+            height: 3rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .pink-bg { background-color: var(--pink-100); }
+        .pink-bg i { color: var(--pink-600); font-size: 1.25rem; }
+
+        .recommendation-header h3 {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .recommendation-header h3 {
+                font-size: 1.125rem;
+            }
+        }
+
+        .recommendations-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        /* New: Styles for recommendation list item transitions */
+        .recommendation-item-transition {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .recommendation-item-transition.recommendation-item-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .recommendations-list li {
+            display: flex;
+            align-items: flex-start;
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 640px) {
+            .recommendations-list li {
+                font-size: 1rem;
+            }
+        }
+
+        .checkmark-icon {
+            color: var(--green-500);
+            margin-top: 0.25rem;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .refresh-button-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .refresh-recommendations-button {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: var(--gray-100);
+            color: var(--gray-600);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .refresh-recommendations-button i {
+            margin-right: 0.5rem;
+        }
+
+        .refresh-recommendations-button:hover {
+            background-color: var(--gray-200);
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: white;
+            border-top: 1px solid var(--gray-200);
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+            }
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-logo-container {
+                margin-bottom: 0;
+            }
+        }
+
+        .footer-logo-icon-wrapper {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            background-color: var(--indigo-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo-icon-wrapper i {
+            color: var(--indigo-600);
+        }
+
+        .footer-logo-container h2 {
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .footer-links {
+                gap: 1.5rem;
+            }
+        }
+
+        .footer-links a {
+            color: var(--gray-600);
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 640px) {
+            .footer-links a {
+                font-size: 1rem;
+            }
+        }
+
+        .footer-links a:hover {
+            color: var(--indigo-600);
+        }
+
+        .copyright-info {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        @media (min-width: 640px) {
+            .copyright-info {
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Mood Modal Styles */
+        .mood-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .mood-modal-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .mood-modal-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            width: 95%;
+            max-width: 400px;
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (min-width: 640px) {
+            .mood-modal-content {
+                padding: 2rem;
+            }
+        }
+
+        .mood-modal-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        @media (min-width: 640px) {
+            .mood-modal-content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .mood-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        @media (min-width: 400px) {
+            .mood-options {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        .mood-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            border-radius: 0.75rem;
+            background-color: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--gray-600);
+        }
+
+        @media (min-width: 640px) {
+            .mood-option {
+                padding: 0.75rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        .mood-option i {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .mood-option i {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .mood-option:hover {
+            background-color: var(--gray-100);
+            border-color: var(--indigo-200);
+        }
+
+        .mood-option.selected-mood {
+            border-color: var(--indigo-500);
+            background-color: var(--indigo-50);
+            box-shadow: 0 0 0 2px var(--indigo-200);
+        }
+
+        .mood-option[data-mood="Happy"].selected-mood { border-color: var(--green-500); background-color: var(--green-100); box-shadow: 0 0 0 2px var(--green-200); }
+        .mood-option[data-mood="Neutral"].selected-mood { border-color: var(--blue-500); background-color: var(--blue-100); box-shadow: 0 0 0 2px var(--blue-200); }
+        .mood-option[data-mood="Sad"].selected-mood { border-color: var(--red-500); background-color: #fee2e2; box-shadow: 0 0 0 2px #fecaca; }
+        .mood-option[data-mood="Anxious"].selected-mood { border-color: var(--orange-500); background-color: #ffedd5; box-shadow: 0 0 0 2px #fed7aa; }
+        .mood-option[data-mood="Energetic"].selected-mood { border-color: var(--yellow-600); background-color: var(--yellow-100); box-shadow: 0 0 0 2px var(--yellow-200); }
+
+        .modal-actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        @media (min-width: 400px) {
+            .modal-actions {
+                flex-direction: row;
+                gap: 1rem;
+            }
+        }
+
+        .modal-actions .log-mood-button {
+            margin-top: 0;
+            width: auto;
+            flex-grow: 1;
+            background-color: var(--indigo-600);
+            color: white;
+        }
+
+        .modal-actions .log-mood-button:hover {
+            background-color: var(--indigo-800);
+        }
+
+        .modal-actions .reset-water-button {
+            margin-top: 0;
+            width: auto;
+            flex-grow: 1;
+        }
+
+        /* Additional colors for mood log entries */
+        .green-bg-small i { color: var(--green-600); }
+        .blue-bg-small i { color: var(--blue-600); }
+        .red-bg-small i { color: var(--red-500); }
+        .orange-bg-small i { color: var(--orange-500); }
+        .yellow-bg-small i { color: var(--yellow-600); }
+        .gray-bg-small i { color: var(--gray-500); }
+
+        .green-fill { background-color: var(--green-500); }
+        .blue-fill { background-color: var(--blue-500); }
+        .red-fill { background-color: var(--red-500); }
+        .orange-fill { background-color: var(--orange-500); }
+        .yellow-fill { background-color: var(--yellow-600); }
+        .gray-fill { background-color: var(--gray-500); }
+        /* --- styles.css content ends here --- */
+
+        /* Privacy Policy Page Specific Styles (from original Privacy.css) */
+        .privacy-main-content {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3rem 1rem; /* Consistent padding */
+            margin-top: -3rem; /* Overlap with gradient background */
+            min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+        }
+
+        .privacy-section {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem; /* Space between sections */
+            transition: all 0.3s ease;
+        }
+
+        .privacy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--indigo-100);
+            padding-bottom: 0.5rem;
+        }
+
+        .privacy-section p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-section ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--gray-600);
+        }
+
+        .privacy-section ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .privacy-section ul li strong {
+            color: var(--indigo-600);
+        }
+
+        /* Ensure header text animation works on this page too */
+        .header-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        #dynamicHeaderText {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .header-caret {
+            display: inline-block;
+            width: 0.1em;
+            height: 1em;
+            background-color: transparent;
+            margin-left: 0.1em;
+            vertical-align: baseline;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        @media (min-width: 640px) {
+            .header-content h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg-div">
+        <nav class="main-nav">
+            <div class="logo-container">
+                <div class="logo-icon-wrapper">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <a href="index.html" class="">Soma</a>
+            </div>
+            <div class="nav-bar-container">
+                <nav class="nav-bar">
+                    <a href="index.html"> Home</a>
+                    <a href="About Us.html"> About Us</a>
+                </nav>
+            </div>
+        </nav>
+        
+        <header class="main-header">
+            <div class="header-content">
+                <h1>Our <span id="dynamicHeaderText">Privacy Policy</span><span class="header-caret"></span></h1>
+                <p>Understanding how your data is handled at Soma.</p>
+            </div>
+        </header>
+    </div>
+    
+    <main class="privacy-main-content">
+        <section class="privacy-section">
+            <h2 class="section-title">Introduction</h2>
+            <p>
+                Welcome to Soma's privacy policy. We are committed to protect your personal information and right to privacy. If you have any question or concern about our practices regarding our policy, or our personal information, please contact us.
+            </p>
+            <p>
+                This privacy policy applies to all the information collected through our website, and/or any related service, sales, marketing or events (we collectively refer to them as "services" in this privacy policy).
+            </p>
+        </section>
+
+        <section class="privacy-section">
+            <h2 class="section-title">Information We Collect</h2>
+            <p>
+                We collect personal information that you voluntarily provide us when you register on services, express interest in getting information about us or our products and services, when you participate in activities on services or otherwise when you contact us.
+            </p>
+            <p>
+                The personal information we collected depends on the context of your interaction with us and the services, the options you make and the products and features you use. The individual information we collected can include the following:
+            </p>
+            <ul>
+                <li><strong>Personal Identifiers:</strong> Names, email addresses, phone numbers.</li>
+                <li><strong>Health Data:</strong> Mood logs, hydration levels, breathing exercise duration (voluntarily provided by you within the app).</li>
+                <li><strong>Environmental Data:</strong> Location for AQI and weather (with your consent).</li>
+                <li><strong>Usage Data:</strong> Information about how you use our app and website.</li>
+            </ul>
+        </section>
+
+        <section class="privacy-section">
+            <h2 class="section-title">How We Use Your Information</h2>
+            <p>
+                We use personal information collected through our services for various business purposes described below. We process your personal information for these purposes in dependence on your legitimate business interests, so that with your consent, and/or a contract to comply with you for compliance with our legal obligations. We indicate specific processing grounds that we rely in the next objective listed below.
+            </p>
+            <ul>
+                <li>To provide, operate, and maintain our Services.</li>
+                <li>To improve, personalize, and expand our Services.</li>
+                <li>To understand and analyze how you use our Services.</li>
+                <li>To develop new products, services, features, and functionality.</li>
+                <li>To communicate with you, either straight or through one of our partners, including customer service, to provide you updates and other information related to services, and for marketing and publicity purposes.</li>
+                <li>To process your transactions and manage your orders.</li>
+                <li>To send you emails.</li>
+                <li>To find and prevent fraud.</li>
+            </ul>
+        </section>
+
+        <section class="privacy-section">
+            <h2 class="section-title">Data Security</h2>
+            <p>
+                We have implemented proper technical and organizational security measures designed to protect the protection of any personal information. However, please also remember that we cannot guarantee that the Internet itself is 100% safe. Although we will try our best to protect your personal information, personal information from our services is at your risk. You should only use services within a safe environment.
+            </p>
+        </section>
+
+        <section class="privacy-section">
+            <h2 class="section-title">Changes to This Policy</h2>
+            <p>
+                We can update our privacy policy from time to time. We will inform you about any change by posting a new privacy policy on this page. You are advised to review this privacy policy from time to time for any change. Changes in this privacy policy are effective when they are posted on this page.
+            </p>
+        </section>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <div class="footer-logo-icon-wrapper">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h2>Soma</h2>
+            </div>
+            <div class="footer-links">
+                <a href="Privacy.html" class="active">Privacy</a>
+                <a href="Terms.html">Terms</a>
+            </div>
+        </div>
+        <div class="copyright-info">
+            <p>© 2025 Soma. All rights reserved. Health insights are not medical advice.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Header Text Animation Elements and State
+            const dynamicHeaderTextSpan = document.getElementById('dynamicHeaderText');
+            const headerCaret = document.querySelector('.header-caret');
+            
+            // Define dynamic parts for the Privacy Policy page
+            const dynamicPart1 = "Privacy Policy";
+            const dynamicPart2 = "Your Data";
+            const dynamicPart3 = "Our Commitment";
+
+            // Typing speed (milliseconds per character)
+            const typingSpeed = 100;
+            const backspacingSpeed = 50;
+            const pauseBeforeTyping = 1000; // Pause before typing new text
+            const pauseBeforeBackspacing = 1500; // Pause before backspacing
+
+            // Start header text animation
+            animateHeaderText();
+
+            /**
+             * Animates the header text with typing and backspacing effects.
+             * This function runs in a continuous loop, cycling through defined phrases.
+             */
+            async function animateHeaderText() {
+                // Ensure the dynamic span starts empty
+                dynamicHeaderTextSpan.textContent = '';
+                let caretVisible = true;
+
+                // Function to toggle caret visibility
+                function toggleCaret() {
+                    if (caretVisible) {
+                        headerCaret.style.backgroundColor = 'transparent';
+                    } else {
+                        headerCaret.style.backgroundColor = 'white';
+                    }
+                    caretVisible = !caretVisible;
+                    setTimeout(toggleCaret, 750); // Blinks every 0.75 seconds
+                }
+
+                toggleCaret(); // Start blinking the caret immediately
+
+                await new Promise(resolve => setTimeout(resolve, pauseBeforeTyping)); // Initial pause
+
+                // Array of phrases to cycle through
+                const phrases = [dynamicPart1, dynamicPart2, dynamicPart3];
+                let phraseIndex = 0;
+
+                while (true) {
+                    const currentPhrase = phrases[phraseIndex];
+
+                    // Type the current phrase
+                    for (let i = 0; i <= currentPhrase.length; i++) {
+                        dynamicHeaderTextSpan.textContent = currentPhrase.substring(0, i);
+                        await new Promise(resolve => setTimeout(resolve, typingSpeed));
+                    }
+                    await new Promise(resolve => setTimeout(resolve, pauseBeforeBackspacing));
+
+                    // Backspace the current phrase
+                    for (let i = currentPhrase.length; i >= 0; i--) {
+                        dynamicHeaderTextSpan.textContent = currentPhrase.substring(0, i);
+                        await new Promise(resolve => setTimeout(resolve, backspacingSpeed));
+                    }
+                    await new Promise(resolve => setTimeout(resolve, pauseBeforeTyping));
+
+                    // Move to the next phrase
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
